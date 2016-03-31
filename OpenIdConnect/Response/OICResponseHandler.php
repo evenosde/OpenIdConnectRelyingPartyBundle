@@ -181,7 +181,7 @@ class OICResponseHandler
                 
                 $jwkSetJsonObject = $this->jwkHandler->getJwk();
                 $jwkSet = new \JOSE_JWKSet();
-                $jwkSet->setJwksFromJsonObject($jwkSetJsonObject);
+                //$jwkSet->setJwksFromJsonObject($jwkSetJsonObject);
                 $key = $jwkSet->filterJwk("use", \JOSE_JWK::JWK_USE_SIG);
                 
                 if ($key === null && array_key_exists(0, $jwkSet->keys) ) {
