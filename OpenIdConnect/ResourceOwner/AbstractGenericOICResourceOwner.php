@@ -290,7 +290,7 @@ abstract class AbstractGenericOICResourceOwner implements ResourceOwnerInterface
         $oicToken->getIdToken()->claims['sub'] = str_replace('["',"",$oicToken->getIdToken()->claims['sub']);
         if ($content['sub'] !== $oicToken->getIdToken()->claims['sub']) {
             if($this->logger !== null) {
-                $this->logger->error("InvalidIdTokenException", $oicToken);
+                $this->logger->error("InvalidIdTokenException",(array) $oicToken);
             }
             
             throw new InvalidIdTokenException("The sub value is not equal");
