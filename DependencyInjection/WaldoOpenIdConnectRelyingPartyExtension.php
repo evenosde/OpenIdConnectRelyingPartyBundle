@@ -79,6 +79,7 @@ class WaldoOpenIdConnectRelyingPartyExtension extends Extension
                 ->addMethodCall('setTimeout', array($config['http_client']['timeout']))
                 ->addMethodCall('setMaxRedirects', array($config['http_client']['max_redirects']))
                 ->addMethodCall('setIgnoreErrors', array($config['http_client']['ignore_errors']))
+                ->addMethodCall('setVerifyHost', array($config['http_client']['verify_host']))
         ;
 
         if (isset($config['http_client']['proxy']) && $config['http_client']['proxy'] != '') {
