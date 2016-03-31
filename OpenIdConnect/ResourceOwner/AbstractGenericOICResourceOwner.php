@@ -286,6 +286,8 @@ abstract class AbstractGenericOICResourceOwner implements ResourceOwnerInterface
 
         // Check if the sub value return by the OpenID connect Provider is the 
         // same as previous. If Not, that isn't good...
+        $oicToken->getIdToken()->claims['sub'] = str_replace('"]',"",$oicToken->getIdToken()->claims['sub']);
+        $oicToken->getIdToken()->claims['sub'] = str_replace('["',"",$oicToken->getIdToken()->claims['sub']);
         if ($content['sub'] !== $oicToken->getIdToken()->claims['sub']) {
             if($this->logger !== null) {
                 $this->logger->error("InvalidIdTokenException", $oicToken);
