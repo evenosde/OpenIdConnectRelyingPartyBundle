@@ -61,7 +61,7 @@ class IDTokenValidator implements ValidatorInterface
          * (which is typically obtained during Discovery) MUST exactly match 
          * the value of the iss (issuer) Claim. 
          */
-        if($this->options['issuer'] !== $this->claims['iss']) {
+        if($this->options['issuer'].":443/oauth2/token" !== $this->claims['iss']) {
             $this->errors[] = "Issuer are not the same";
         }
         
