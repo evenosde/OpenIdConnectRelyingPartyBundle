@@ -190,6 +190,7 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('max_redirects')->defaultValue(5)->cannotBeEmpty()->end()
                         ->booleanNode('ignore_errors')->defaultTrue()->end()
                         ->scalarNode('proxy')->end()
+                        ->scalarNode('verify_host')->defaultValue(2)->end()
                     ->end()
                 ->end()
             ->end()
