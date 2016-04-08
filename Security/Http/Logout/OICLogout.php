@@ -79,8 +79,8 @@ class OICLogout
     
     private function getOIDCLogoutEndPointURI(Request $request)
     {
-        return $this->options['endpoints_url']['logout']
-                    . "?post_logout_redirect_uri="
-                    . urlencode($this->getRedirectAfterLogoutURI($request));
+        return $this->options['endpoints_url']['logout'];
+                   // . "?post_logout_redirect_uri="
+                    //. urlencode($this->getRedirectAfterLogoutURI($request));
     }
 }
