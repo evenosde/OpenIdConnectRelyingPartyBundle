@@ -242,6 +242,7 @@ abstract class AbstractGenericOICResourceOwner implements ResourceOwnerInterface
             throw new InvalidIdTokenException($errors);
             
         }
+        $content['id_token']->claims['sub'] = str_replace('\\/',"/",$content['id_token']->claims['sub']);
         $content['id_token']->claims['sub'] = str_replace('"]',"",$content['id_token']->claims['sub']);
         $content['id_token']->claims['sub'] = str_replace('["',"",$content['id_token']->claims['sub']);
         $oicToken->setRawTokenData($content);
